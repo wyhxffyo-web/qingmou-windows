@@ -1,0 +1,54 @@
+<Window x:Class="QingMou.BreakWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="休息提醒" Width="370" Height="250" WindowStyle="None" ResizeMode="NoResize"
+        ShowInTaskbar="False" Topmost="True" AllowsTransparency="True"
+        Background="Transparent" FontFamily="Microsoft YaHei UI,Segoe UI" Foreground="#21342B">
+    <Window.Resources>
+        <Style x:Key="PopupButton" TargetType="Button">
+            <Setter Property="Padding" Value="14,9"/>
+            <Setter Property="Background" Value="#EEF5EF"/>
+            <Setter Property="Foreground" Value="#294633"/>
+            <Setter Property="BorderBrush" Value="#D8E7DB"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBorder" Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="9" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="ButtonBorder" Property="Opacity" Value="0.84"/></Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Border x:Name="RootBorder" Background="Transparent">
+        <Border x:Name="Card" Background="White" BorderBrush="#DCE8DF" BorderThickness="1"
+                CornerRadius="18" Padding="23" MaxWidth="470" Margin="8"
+                HorizontalAlignment="Stretch" VerticalAlignment="Center">
+            <Border.Effect><DropShadowEffect Color="#6C8370" BlurRadius="19" ShadowDepth="4" Opacity="0.22"/></Border.Effect>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="30" Height="30" CornerRadius="10" Background="#E4F1E6" Margin="0,0,10,0">
+                        <TextBlock Text="◒" Foreground="#57966F" FontSize="22" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <TextBlock x:Name="TitleText" Text="让眼睛休息一下" FontSize="18" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                </StackPanel>
+                <TextBlock x:Name="TipText" Text="望向远方，放松双眼" FontSize="12" Foreground="#718679" Margin="0,11,0,0"/>
+                <TextBlock x:Name="CountdownText" Text="00:20" FontSize="39" FontWeight="SemiBold" Margin="0,11,0,12"/>
+                <WrapPanel>
+                    <Button x:Name="SnoozeButton" Content="稍后提醒" Click="Snooze_Click" Style="{StaticResource PopupButton}" Margin="0,0,8,0"/>
+                    <Button Content="跳过本次" Click="Skip_Click" Style="{StaticResource PopupButton}"
+                            Background="White" Foreground="#52685B"/>
+                </WrapPanel>
+            </StackPanel>
+        </Border>
+    </Border>
+</Window>

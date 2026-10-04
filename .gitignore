@@ -1,0 +1,5 @@
+bin/
+obj/
+dist/
+ui-check.png
+break-check.png
