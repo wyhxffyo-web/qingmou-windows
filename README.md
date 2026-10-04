@@ -2,6 +2,10 @@
 
 轻眸是一款面向 Windows 的护眼休息提醒应用。它在系统托盘后台计时，到时间后提醒你暂时离开屏幕、看看远处。
 
+## 界面预览
+
+![轻眸主界面：专注倒计时与提醒设置](docs/screenshot.png)
+
 ## 功能
 
 - 自定义专注时长和休息时长。
@@ -13,7 +17,7 @@
 
 ## 使用
 
-从 GitHub 的 **Releases** 下载 `QingMou-Windows-x64.zip`，解压后双击 `QingMou.exe`。此版本为 Windows x64 自包含发布，无需另装 .NET，也无需管理员权限。
+从 [Releases](https://github.com/wyhxffyo-web/qingmou-windows/releases) 下载 `QingMou-Windows-x64.zip`，解压后双击 `QingMou.exe`。此版本为 Windows x64 自包含发布，无需另装 .NET，也无需管理员权限。
 
 首次运行时，可以选择“一键启用推荐设置”，或暂不开机启动直接使用。关闭主窗口后，轻眸会继续在系统托盘运行；右键托盘图标可重新打开、暂停提醒、立即休息或退出。
 
